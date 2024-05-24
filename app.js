@@ -4,9 +4,14 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-  res.send("<h1>Benvenuto nel mio Blog</h1>");
-});
+//Posts Controller
+const posts = require("./controllers/posts");
+
+//HOME
+app.get("/", posts.home);
+
+//POSTS
+app.get("/posts", posts.index);
 
 app.listen(port, () => {
   console.log(`Server pronto a http://localhost:${port}`);

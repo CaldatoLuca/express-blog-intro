@@ -1,0 +1,32 @@
+[
+  {
+    "titolo": "Introduzione alla Programmazione",
+    "contenuto": "La programmazione è l'arte di scrivere istruzioni che un computer può eseguire. In questo post, esploreremo i concetti di base della programmazione e i primi passi per iniziare.",
+    "immagine": "",
+    "tags": ["programmazione", "coding", "tutorial"]
+  },
+  {
+    "titolo": "Guida all'HTML",
+    "contenuto": "HTML è il linguaggio di markup utilizzato per creare pagine web. In questo post, imparerai le basi di HTML e come creare una semplice pagina web.",
+    "immagine": "",
+    "tags": ["HTML", "web design", "sviluppo web"]
+  },
+  {
+    "titolo": "Scoprire il CSS",
+    "contenuto": "CSS è utilizzato per controllare l'aspetto delle pagine web. Questa guida ti mostrerà come utilizzare CSS per creare layout attraenti e responsivi.",
+    "immagine": "",
+    "tags": ["CSS", "design", "sviluppo web"]
+  },
+  {
+    "titolo": "Introduzione a JavaScript",
+    "contenuto": "JavaScript è un linguaggio di programmazione che permette di creare interazioni dinamiche sulle pagine web. Scopri le basi di JavaScript e come iniziare a usarlo.",
+    "immagine": "",
+    "tags": ["JavaScript", "programmazione", "web development"]
+  },
+  {
+    "titolo": "Guida a Python per Principianti",
+    "contenuto": "Python è un linguaggio di programmazione versatile e potente. In questo post, introdurremo i concetti fondamentali di Python e come iniziare a programmare con esso.",
+    "immagine": "",
+    "tags": ["Python", "programmazione", "tutorial"]
+  }
+]
