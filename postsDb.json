@@ -28,5 +28,11 @@
     "contenuto": "Python è un linguaggio di programmazione versatile e potente. In questo post, introdurremo i concetti fondamentali di Python e come iniziare a programmare con esso.",
     "immagine": "post.jpeg",
     "tags": ["Python", "programmazione", "tutorial"]
+  },
+  {
+    "titolo": "Post aggiunto con chimata POST",
+    "contenuto": "Questo post è una prova per vedere se si aggiorna correttamente la pagina e per vedere se anche il postsDb.json si aggiorna di conseguenza",
+    "immagine": "post.jpeg",
+    "tags": ["POST", "aggiunta", "prova"]
   }
 ]

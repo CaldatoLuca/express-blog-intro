@@ -1,8 +1,5 @@
 //Utility
-const { readJSON, readHTML } = require("../utils");
-
-//Posts
-const posts = readJSON("postsDb");
+const { readJSON, readHTML, writeJSON } = require("../utils");
 
 //Risposta per la Home
 const home = (req, res) => {
@@ -15,6 +12,9 @@ const index = (req, res) => {
   res.format({
     //RISPOSTA HTML
     html: () => {
+      //Posts
+      const posts = readJSON("postsDb");
+
       //Leggo file HTML
       const postsHTML = readHTML("posts");
 
@@ -51,7 +51,28 @@ const index = (req, res) => {
   });
 };
 
+//aggiunta post
+const addPost = (req, res) => {
+  const posts = readJSON("postsDb");
+
+  const { titolo, contenuto, immagine, tags } = req.body;
+
+  const newPost = {
+    titolo,
+    contenuto,
+    immagine,
+    tags,
+  };
+
+  posts.push(newPost);
+
+  writeJSON("postsDb", posts);
+
+  res.status(201).json(newPost);
+};
+
 module.exports = {
   home,
   index,
+  addPost,
 };
