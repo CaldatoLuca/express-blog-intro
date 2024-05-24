@@ -25,6 +25,7 @@ const index = (req, res) => {
             `<li>
             ${post.titolo} <br/>
             ${post.contenuto} <br/>
+            <img src="/${post.immagine}" alt="${post.titolo}"> <br/>
             ${post.tags.map((tag) => `<span>${tag}</span>`).join(" - ")} <br/>
           </li> <br/>`
         )
