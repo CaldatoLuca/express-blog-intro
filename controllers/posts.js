@@ -3,7 +3,9 @@ const { readJSON, readHTML, writeJSON } = require("../utils");
 
 //Risposta per la Home
 const home = (req, res) => {
-  res.send("<h1>Benvenuto nel mio Blog</h1> <a href='/posts'>Vai ai posts</a>");
+  //Leggo file HTML
+  const homeHTML = readHTML("home");
+  res.send(homeHTML);
 };
 
 //Risposta alla index dei posts
@@ -22,11 +24,22 @@ const index = (req, res) => {
       const postsListHTML = posts
         .map(
           (post) =>
-            `<li>
-            ${post.titolo} <br/>
-            ${post.contenuto} <br/>
-            <img src="/${post.immagine}" alt="${post.titolo}"> <br/>
-            ${post.tags.map((tag) => `<span>${tag}</span>`).join(" - ")} <br/>
+            `<li class="border border-white p-4  w-1/3 text-center">
+           <div>
+              <div class="text-stone-900 uppercase font-bold text-xl mb-2">
+                 ${post.titolo} 
+                 </div> <br/>
+           
+                 <div class="text-stone-900  font-bold text-md mb-2">
+                 ${post.contenuto} 
+                 </div> <br/>
+
+                 <div class="flex justify-center">
+                 <img src="/${post.immagine}" alt="${post.titolo}">
+                 </div> <br/>
+                          
+           ${post.tags.map((tag) => `<span>${tag}</span>`).join(" - ")} <br/>
+           </div>
           </li> <br/>`
         )
         .join("");

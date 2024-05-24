@@ -4,12 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Posts</title>
+
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <h1>Lista dei posts</h1>
-    <ul>
-      {{postsList}}
-    </ul>
-    <a href="/">Torna alla home</a>
+    <div id="posts" class="bg-emerald-500 p-5 min-h-screen">
+      <header class="flex justify-between items-center">
+        <h1 class="text-stone-900 uppercase font-bold text-3xl mb-8">Posts</h1>
+        <div>
+          <a
+            href="/"
+            class="border py-1 px-5 text-emerald-600 border-white bg-white rounded-md cursor-pointer"
+            >Torna alla home</a
+          >
+        </div>
+      </header>
+
+      <ul class="flex flex-wrap">
+        {{postsList}}
+      </ul>
+    </div>
   </body>
 </html>
