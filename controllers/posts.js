@@ -11,8 +11,17 @@ const home = (req, res) => {
 
 //Risposta alla index dei posts
 const index = (req, res) => {
-  res.send("<h1>Lista posts</h1> <a href='/'>Torna alla Home</a>");
-  console.log(posts[0]);
+  res.format({
+    html: () => {
+      res.send(`<h1>Lista dei posts</h1> <a href='/'>Torna alla home</a>`);
+    },
+    json: () => {
+      res.send({ message: posts });
+    },
+    default: () => {
+      res.status(406).send({ message: "Formato non supportato" });
+    },
+  });
 };
 
 module.exports = {
