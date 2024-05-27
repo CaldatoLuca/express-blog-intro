@@ -1,6 +1,8 @@
 //Utility
 const { readJSON, readHTML, writeJSON } = require("../utils");
 
+const posts = readJSON("postsDb");
+
 //Risposta per la Home
 const home = (req, res) => {
   //Leggo file HTML
@@ -15,7 +17,6 @@ const index = (req, res) => {
     //RISPOSTA HTML
     html: () => {
       //Posts
-      const posts = readJSON("postsDb");
 
       //Leggo file HTML
       const postsHTML = readHTML("posts");
@@ -53,7 +54,7 @@ const index = (req, res) => {
 
     //RISPOSTA JSON
     json: () => {
-      res.send({ message: posts });
+      res.send({ data: posts, count: posts.length });
     },
 
     //Se non gestisco la richiesta metto status 406 e mando messaggio di avviso
@@ -66,8 +67,6 @@ const index = (req, res) => {
 
 //aggiunta post
 const addPost = (req, res) => {
-  const posts = readJSON("postsDb");
-
   const { titolo, contenuto, immagine, tags } = req.body;
 
   const newPost = {
